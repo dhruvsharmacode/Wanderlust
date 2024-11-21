@@ -1,0 +1,210 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+    #filters {
+        display: flex;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #filter-container{
+        display: flex;
+        margin-top: 1rem;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        align-items: center;
+        width: 40vw;
+    }
+    /* width */
+    #filter-container::-webkit-scrollbar {
+    height: 4px;
+    width: 10px;
+    }
+
+    /* Track */
+    #filter-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgb(255, 255, 255); 
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    #filter-container::-webkit-scrollbar-thumb {
+    background: #dddd; 
+    border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    #filter-container::-webkit-scrollbar-thumb:hover {
+    background: #a6a6a6dd; 
+    }
+    .filter {
+       text-align: center;
+       margin-right: 2rem;
+       margin-top: 2rem;
+       font-size: 12px;
+       opacity: 0.7;
+    }
+    .filter img{
+        width: 1.3rem;
+    }
+
+    .filter:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .taxinfo{
+        display: none;
+    }
+
+    .tax-switch{
+        font-size: 0.8rem;
+        border: 1px solid #dddddd;
+        padding: 24px;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        height: 12px;
+        margin-left: 3rem;
+    }
+</style>
+
+<div id="filters">
+    <div id="filter-container">
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="">
+        </div>
+        <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png" alt="">
+        </div>
+        <p>Icons</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg" alt="">
+        </div>
+        <p>Farms</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" alt="">
+        </div>
+        <p>Cabins</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg" alt="">
+        </div>
+        <p>Design</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/c0fa9598-4e37-40f3-b734-4bd0e2377add.jpg" alt="">
+        </div>
+        <p>New</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/78ba8486-6ba6-4a43-a56d-f556189193da.jpg" alt="">
+        </div>
+        <p>Mansions</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg" alt="">
+        </div>
+        <p>Beach</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg" alt="">
+        </div>
+        <p>OMG!</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt="">
+        </div>
+        <p>Amazing views</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/31c1d523-cc46-45b3-957a-da76c30c85f9.jpg" alt="">
+        </div>
+        <p>Camper Vans</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="">
+        </div>
+        <p>Islands</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/c0a24c04-ce1f-490c-833f-987613930eca.jpg" alt="">
+        </div>
+        <p>National parks</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg" alt="">
+        </div>
+        <p>Arctic</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg" alt="">
+        </div>
+        <p>Lakefront</p>
+    </div>
+    <div class="filter">
+        <div>
+            <img src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg" alt="">
+        </div>
+        <p>Camping</p>
+    </div>
+    </div>
+
+    <div class="form-check form-switch form-check-reverse tax-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+        <label class="form-check-label" for="flexSwitchCheckReverse">Display total before taxes</label>
+    </div>
+</div>
+
+
+
+<div class="row row-col-lg-4 mt-3">
+    <% for(listing of allListings) { %> 
+    <a href="/listings/<%= listing.id %>" class="listing-link">
+    <div class="card listing-card col" style="width: 20rem;">
+        <img class="card-img-top" src="<%= listing.image.url %>" alt="listing_image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+            <p class="card-text">
+            <b><%= listing.title %> <br></b>
+            &#x20b9; <%= listing.price.toLocaleString("en-In") %> / night
+            <i class="taxinfo"> &nbsp; &nbsp; +18% GST</i> <br>
+        </p>
+        </div>
+    </div> 
+    </a>
+    <% } %>
+</div>
+
+<script>
+    let taxSwitch = document.getElementById("flexSwitchCheckReverse");
+    taxSwitch.addEventListener("click", ()=>{
+       let taxInfo = document.getElementsByClassName("taxinfo");
+       for(info of taxInfo) {
+        if(info.style.display != "inline") {
+            info.style.display = "inline"
+        } else {
+            info.style.display = "none"
+        }
+       }
+    })
+</script>
